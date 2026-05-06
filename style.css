@@ -483,6 +483,12 @@ ul { list-style: none; }
   font-family: var(--mono);
 }
 
+.note-icon {
+  color: #41c9b4;
+  font-family: var(--font);
+  font-weight: 700;
+}
+
 .contact-platform {
   font-size: 0.75rem;
   color: var(--muted);
