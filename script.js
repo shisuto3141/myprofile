@@ -56,8 +56,10 @@ const modalData = {
     icon: 'bi bi-egg-fried',
     comment: 'レシピをアレンジして自分流にカスタマイズするのが楽しい。最近はアジアン系の料理にハマり中。作った料理は写真で記録しています。',
     // 写真を追加するときは src に画像パスを入れてください
-    // 例: { src: 'assets/cooking_01.jpg', alt: 'パスタ' }
-    photos: [],
+    // 例:
+    photos: [ { src: 'assets/meat_pie.jpg', alt: 'ミートパイを作りました！' },
+              { src: 'assets/chicken.jpg', alt: 'チキンのクリーム煮' }
+    ],
   },
   outdoor: {
     title: 'ドライブ・キャンプ・登山',
@@ -123,5 +125,44 @@ overlay.addEventListener('click', (e) => {
 
 // 閉じる：ESC キー
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') {
+    if (lightbox.classList.contains('is-open')) closeLightbox();
+    else closeModal();
+  }
+});
+
+// ===== LIGHTBOX =====
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+  <button class="lightbox-close" aria-label="閉じる"><i class="bi bi-x-lg"></i></button>
+  <img class="lightbox-img" src="" alt="" />
+  <p class="lightbox-caption"></p>
+`;
+document.body.appendChild(lightbox);
+
+const lbImg     = lightbox.querySelector('.lightbox-img');
+const lbCaption = lightbox.querySelector('.lightbox-caption');
+
+function openLightbox(src, caption) {
+  lbImg.src            = src;
+  lbImg.alt            = caption;
+  lbCaption.textContent = caption;
+  lightbox.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('is-open');
+}
+
+lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// 写真クリックでライトボックスを開く（モーダル内の img に対して委譲）
+photosEl.addEventListener('click', (e) => {
+  const img = e.target.closest('img');
+  if (img) openLightbox(img.src, img.alt);
 });
