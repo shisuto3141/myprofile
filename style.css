@@ -478,6 +478,11 @@ ul { list-style: none; }
   font-weight: 700;
 }
 
+.qiita-icon {
+  color: #55c500;
+  font-family: var(--mono);
+}
+
 .contact-platform {
   font-size: 0.75rem;
   color: var(--muted);
