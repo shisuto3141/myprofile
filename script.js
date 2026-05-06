@@ -57,15 +57,24 @@ const modalData = {
     comment: 'レシピをアレンジして自分流にカスタマイズするのが楽しい。最近はアジアン系の料理にハマり中。作った料理は写真で記録しています。',
     // 写真を追加するときは src に画像パスを入れてください
     // 例:
-    photos: [ { src: 'assets/meat_pie.jpg', alt: 'ミートパイを作りました！' },
-              { src: 'assets/chicken.jpg', alt: 'チキンのクリーム煮' }
+    photos: [ { src: 'assets/food1.jpg', alt: 'チキンのクリーム煮' },
+              { src: 'assets/food2.jpg', alt: 'オーブンレンジを買ったので、ミートパイを焼きました！' },
+              { src: 'assets/food3.jpg', alt: '真鯛を捌いてポワレのオレンジソースがけを作りました' },
+              { src: 'assets/food4.jpg', alt: 'SNSで話題になってたジューシーハンバーグ' },
+              { src: 'assets/food5.jpg', alt: '明太子パスタと白ワイン' },
+              { src: 'assets/food6.jpg', alt: '鶏むね肉のソテーとシーフードリゾット' }
     ],
   },
   outdoor: {
-    title: 'ドライブ・キャンプ・登山',
-    icon: 'bi bi-tree-fill',
+    title: '旅行・キャンプ',
+    icon: 'bi bi-airplane',
     comment: 'アウトドア全般が好き。非日常の景色でリフレッシュするのが最高。ソロキャンプから友人と登山まで幅広く楽しんでいます。',
-    photos: [],
+    photos: [{ src: 'assets/outdoor1.jpg', alt: '山梨県のまかいの牧場にて' },
+             { src: 'assets/outdoor2.jpg', alt: '本栖湖キャンプ場でソロキャン！富士山が良く見えました' },
+             { src: 'assets/outdoor3.jpg', alt: '出張でスペインのバルセロナへ！ギリ未完成のサクラダ・ファミリア' },
+             { src: 'assets/outdoor4.jpg', alt: 'バルセロナはシーフードが最高でした！' },
+             { src: 'assets/outdoor5.jpg', alt: 'ドイツ・フランクフルトにて' },
+             { src: 'assets/outdoor6.jpg', alt: 'ドイツのビールはめっちゃデカいです' }],
   },
 };
 
