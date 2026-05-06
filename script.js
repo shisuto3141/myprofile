@@ -1,8 +1,8 @@
-// Highlight active nav link on scroll
+// ===== NAV: active link on scroll =====
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-const observer = new IntersectionObserver(
+const navObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -17,12 +17,11 @@ const observer = new IntersectionObserver(
   },
   { rootMargin: '-50% 0px -50% 0px' }
 );
+sections.forEach((s) => navObserver.observe(s));
 
-sections.forEach((s) => observer.observe(s));
-
-// Fade-in on scroll
+// ===== FADE-IN on scroll =====
 const fadeEls = document.querySelectorAll(
-  '.timeline-item, .skill-card, .contact-card'
+  '.timeline-item, .skill-card, .contact-card, .hobby-card, .project-card'
 );
 
 const fadeObserver = new IntersectionObserver(
@@ -44,14 +43,85 @@ fadeEls.forEach((el) => {
   fadeObserver.observe(el);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.visible').forEach(() => {});
+const visibleStyle = document.createElement('style');
+visibleStyle.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
+document.head.appendChild(visibleStyle);
+
+// ===== HOBBY MODAL =====
+const PHOTO_SLOTS = 6;
+
+const modalData = {
+  cooking: {
+    title: '料理',
+    icon: 'bi bi-egg-fried',
+    comment: 'レシピをアレンジして自分流にカスタマイズするのが楽しい。最近はアジアン系の料理にハマり中。作った料理は写真で記録しています。',
+    // 写真を追加するときは src に画像パスを入れてください
+    // 例: { src: 'assets/cooking_01.jpg', alt: 'パスタ' }
+    photos: [],
+  },
+  outdoor: {
+    title: 'ドライブ・キャンプ・登山',
+    icon: 'bi bi-tree-fill',
+    comment: 'アウトドア全般が好き。非日常の景色でリフレッシュするのが最高。ソロキャンプから友人と登山まで幅広く楽しんでいます。',
+    photos: [],
+  },
+};
+
+const overlay  = document.getElementById('modalOverlay');
+const modalEl  = overlay.querySelector('.modal');
+const titleEl  = overlay.querySelector('.modal-title');
+const iconEl   = overlay.querySelector('.modal-title-icon');
+const commentEl = overlay.querySelector('.modal-comment');
+const photosEl = overlay.querySelector('.modal-photos');
+const closeBtn = document.getElementById('modalClose');
+
+function openModal(key) {
+  const data = modalData[key];
+  if (!data) return;
+
+  titleEl.textContent  = data.title;
+  iconEl.className     = `modal-title-icon ${data.icon}`;
+  commentEl.textContent = data.comment;
+
+  // 写真グリッドを組み立てる
+  photosEl.innerHTML = '';
+  for (let i = 0; i < PHOTO_SLOTS; i++) {
+    const slot = document.createElement('div');
+    slot.className = 'modal-photo-slot';
+    if (data.photos[i]) {
+      const img = document.createElement('img');
+      img.src = data.photos[i].src;
+      img.alt = data.photos[i].alt || '';
+      slot.appendChild(img);
+    } else {
+      slot.innerHTML = '<i class="bi bi-camera"></i><span>写真を追加</span>';
+    }
+    photosEl.appendChild(slot);
+  }
+
+  overlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+// 開く：クリック可能な hobby-card
+document.querySelectorAll('.hobby-card--clickable').forEach((card) => {
+  card.addEventListener('click', () => openModal(card.dataset.modal));
 });
 
-// Helper applied by observer
-document.addEventListener('click', () => {}, { passive: true });
+// 閉じる：× ボタン
+closeBtn.addEventListener('click', closeModal);
 
-// Apply visible style
-const style = document.createElement('style');
-style.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
-document.head.appendChild(style);
+// 閉じる：オーバーレイ背景クリック
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) closeModal();
+});
+
+// 閉じる：ESC キー
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});

@@ -172,16 +172,18 @@
           <p class="hobby-desc">週数回ジムへ。データで身体を管理するのがマイブーム。</p>
         </div>
 
-        <div class="hobby-card">
+        <div class="hobby-card hobby-card--clickable" data-modal="cooking">
           <i class="bi bi-egg-fried hobby-icon"></i>
           <span class="hobby-name">料理</span>
           <p class="hobby-desc">レシピをアレンジして自分流にカスタマイズするのが楽しい。</p>
+          <span class="hobby-more">詳しく見る <i class="bi bi-arrow-right"></i></span>
         </div>
 
-        <div class="hobby-card">
+        <div class="hobby-card hobby-card--clickable" data-modal="outdoor">
           <i class="bi bi-tree-fill hobby-icon"></i>
           <span class="hobby-name">ドライブ・キャンプ・登山</span>
           <p class="hobby-desc">アウトドア全般が好き。非日常の景色でリフレッシュ。</p>
+          <span class="hobby-more">詳しく見る <i class="bi bi-arrow-right"></i></span>
         </div>
 
       </div>
@@ -230,6 +232,25 @@
       </div>
     </div>
   </section>
+
+  <!-- ========== MODAL ========== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <i class="modal-title-icon"></i>
+          <h2 class="modal-title"></h2>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="閉じる">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-comment"></p>
+        <div class="modal-photos"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
