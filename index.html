@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sisto's Profile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav">
+    <span class="nav-logo">Sisto</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="about">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name">Sisto</h1>
+        <p class="hero-role">Data Scientist</p>
+        <p class="hero-desc">
+          大手通信企業でデータサイエンティストとして従事。<br />
+          データ分析・機械学習ロジック開発・ビジネス企画に取り組んでいます。<br />
+          趣味でスマホアプリやWebアプリの開発もやっています。
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Contact</a>
+          <a href="#projects" class="btn btn-outline">Projects</a>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-ring">
+          <span class="badge-initial">S</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAREER ========== -->
+  <section class="section" id="career">
+    <div class="container">
+      <h2 class="section-title">Career</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023.04 – Present</span>
+            <h3>データサイエンティスト</h3>
+            <p class="timeline-company">大手通信企業</p>
+            <p class="timeline-desc">データ分析・機械学習ロジック開発・ビジネス企画に従事。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021.04 – 2023.03</span>
+            <h3>大学院 修士課程</h3>
+            <p class="timeline-company">工学研究科 — 工学修士取得</p>
+            <p class="timeline-desc">医用工学領域を専攻。</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="section-note">※ 詳細は順次更新予定</p>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3><i class="bi bi-code-slash"></i> Programming</h3>
+          <ul class="skill-list">
+            <li><i class="bi bi-filetype-py"></i> Python</li>
+            <li><i class="bi bi-database"></i> SQL</li>
+            <li><i class="bi bi-filetype-html"></i> HTML / CSS</li>
+            <li><i class="bi bi-braces-asterisk"></i> Node.js</li>
+            <li><i class="bi bi-phone"></i> Flutter</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3><i class="bi bi-robot"></i> Data / ML</h3>
+          <ul class="skill-list">
+            <li><i class="bi bi-cpu"></i> scikit-learn</li>
+            <li><i class="bi bi-lightning-charge"></i> PyTorch</li>
+            <li><i class="bi bi-table"></i> Pandas / NumPy</li>
+            <li><i class="bi bi-bar-chart-line"></i> Matplotlib</li>
+            <li><i class="bi bi-journal-code"></i> Jupyter</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3><i class="bi bi-cloud"></i> Infrastructure</h3>
+          <ul class="skill-list">
+            <li><i class="bi bi-cloud-fill"></i> AWS</li>
+            <li><i class="bi bi-train-front"></i> Railway.app</li>
+            <li><i class="bi bi-box-seam"></i> Docker</li>
+            <li><i class="bi bi-github"></i> Git / GitHub</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <img class="project-icon" src="assets/levelog_icon.png" alt="LeveLog icon" />
+            <div>
+              <h3 class="project-name">LeveLog</h3>
+              <span class="badge-coming"><i class="bi bi-rocket-takeoff"></i> Coming Soon</span>
+            </div>
+          </div>
+          <p class="project-desc">
+            日々の学習・成長を記録してレベルアップを実感できるアプリ。<br />
+            現在開発中 — もうすぐリリース予定です！
+          </p>
+          <div class="project-tags">
+            <span>Flutter</span>
+            <span>Firebase</span>
+            <span>Dart</span>
+          </div>
+        </div>
+
+      </div>
+      <p class="section-note">※ その他のプロジェクトも順次公開予定</p>
+    </div>
+  </section>
+
+  <!-- ========== HOBBIES ========== -->
+  <section class="section section-alt" id="hobbies">
+    <div class="container">
+      <h2 class="section-title">Hobbies</h2>
+      <div class="hobbies-grid">
+
+        <div class="hobby-card">
+          <i class="bi bi-laptop hobby-icon"></i>
+          <span class="hobby-name">アプリ開発</span>
+          <p class="hobby-desc">スマホアプリ・Webアプリをゼロから構築するのが好き。</p>
+        </div>
+
+        <div class="hobby-card">
+          <i class="bi bi-heart-pulse-fill hobby-icon"></i>
+          <span class="hobby-name">筋トレ</span>
+          <p class="hobby-desc">週数回ジムへ。データで身体を管理するのがマイブーム。</p>
+        </div>
+
+        <div class="hobby-card">
+          <i class="bi bi-egg-fried hobby-icon"></i>
+          <span class="hobby-name">料理</span>
+          <p class="hobby-desc">レシピをアレンジして自分流にカスタマイズするのが楽しい。</p>
+        </div>
+
+        <div class="hobby-card">
+          <i class="bi bi-tree-fill hobby-icon"></i>
+          <span class="hobby-name">ドライブ・キャンプ・登山</span>
+          <p class="hobby-desc">アウトドア全般が好き。非日常の景色でリフレッシュ。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-desc">お気軽にお声がけください。</p>
+      <div class="contact-links">
+
+        <a class="contact-card" href="https://x.com/sisto_ai_labs" target="_blank" rel="noopener">
+          <span class="contact-platform-icon">𝕏</span>
+          <div>
+            <p class="contact-platform">X (Twitter)</p>
+            <p class="contact-handle">@sisto_ai_labs</p>
+          </div>
+        </a>
+
+        <a class="contact-card" href="mailto:sisto3141@gmail.com">
+          <span class="contact-platform-icon">✉</span>
+          <div>
+            <p class="contact-platform">Email</p>
+            <p class="contact-handle">sisto3141@gmail.com</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>© 2025 Sisto. Built with HTML / CSS / JS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
