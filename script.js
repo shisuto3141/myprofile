@@ -1,6 +1,6 @@
 // ===== VISITOR TRACKING =====
 // Railway にデプロイ後、URL を差し替えてください
-const VISITOR_API = 'https://YOUR_RAILWAY_APP.up.railway.app/api/visit';
+const VISITOR_API = 'https://myprofile-production-3766.up.railway.app/api/visit';
 
 (async () => {
   try {
