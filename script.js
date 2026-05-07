@@ -1,3 +1,25 @@
+// ===== VISITOR TRACKING =====
+// Railway にデプロイ後、URL を差し替えてください
+const VISITOR_API = 'https://YOUR_RAILWAY_APP.up.railway.app/api/visit';
+
+(async () => {
+  try {
+    await fetch(VISITOR_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        referrer:      document.referrer || null,
+        user_agent:    navigator.userAgent,
+        screen_width:  window.screen.width,
+        screen_height: window.screen.height,
+        page_url:      location.href,
+      }),
+    });
+  } catch (_) {
+    // tracking 失敗はサイト表示に影響させない
+  }
+})();
+
 // ===== NAV: active link on scroll =====
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
