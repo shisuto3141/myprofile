@@ -79,24 +79,24 @@ const modalData = {
     comment: 'レシピをアレンジして自分流にカスタマイズするのが楽しい。最近はアジアン系の料理にハマり中。作った料理は写真で記録しています。',
     // 写真を追加するときは src に画像パスを入れてください
     // 例:
-    photos: [ { src: 'assets/food1.jpg', alt: 'チキンのクリーム煮' },
-              { src: 'assets/food2.jpg', alt: 'オーブンレンジを買ったので、ミートパイを焼きました！' },
-              { src: 'assets/food3.jpg', alt: '真鯛を捌いてポワレのオレンジソースがけを作りました' },
-              { src: 'assets/food4.jpg', alt: 'SNSで話題になってたジューシーハンバーグ' },
-              { src: 'assets/food5.jpg', alt: '明太子パスタと白ワイン' },
-              { src: 'assets/food6.jpg', alt: '鶏むね肉のソテーとシーフードリゾット' }
+    photos: [ { src: 'assets/hobbies/food1.jpg', alt: 'チキンのクリーム煮' },
+              { src: 'assets/hobbies/food2.jpg', alt: 'オーブンレンジを買ったので、ミートパイを焼きました！' },
+              { src: 'assets/hobbies/food3.jpg', alt: '真鯛を捌いてポワレのオレンジソースがけを作りました' },
+              { src: 'assets/hobbies/food4.jpg', alt: 'SNSで話題になってたジューシーハンバーグ' },
+              { src: 'assets/hobbies/food5.jpg', alt: '明太子パスタと白ワイン' },
+              { src: 'assets/hobbies/food6.jpg', alt: '鶏むね肉のソテーとシーフードリゾット' }
     ],
   },
   outdoor: {
     title: '旅行・キャンプ',
     icon: 'bi bi-airplane',
     comment: 'アウトドア全般が好き。非日常の景色でリフレッシュするのが最高。ソロキャンプから友人と登山まで幅広く楽しんでいます。',
-    photos: [{ src: 'assets/outdoor1.jpg', alt: '山梨県のまかいの牧場にて' },
-             { src: 'assets/outdoor2.jpg', alt: '本栖湖キャンプ場でソロキャン！富士山が良く見えました' },
-             { src: 'assets/outdoor3.jpg', alt: '出張でスペインのバルセロナへ！ギリ未完成のサクラダ・ファミリア' },
-             { src: 'assets/outdoor4.jpg', alt: 'バルセロナはシーフードが最高でした！' },
-             { src: 'assets/outdoor5.jpg', alt: 'ドイツ・フランクフルトにて' },
-             { src: 'assets/outdoor6.jpg', alt: 'ドイツのビールはめっちゃデカいです' }],
+    photos: [{ src: 'assets/hobbies/outdoor1.jpg', alt: '山梨県のまかいの牧場にて' },
+             { src: 'assets/hobbies/outdoor2.jpg', alt: '本栖湖キャンプ場でソロキャン！富士山が良く見えました' },
+             { src: 'assets/hobbies/outdoor3.jpg', alt: '出張でスペインのバルセロナへ！ギリ未完成のサクラダ・ファミリア' },
+             { src: 'assets/hobbies/outdoor4.jpg', alt: 'バルセロナはシーフードが最高でした！' },
+             { src: 'assets/hobbies/outdoor5.jpg', alt: 'ドイツ・フランクフルトにて' },
+             { src: 'assets/hobbies/outdoor6.jpg', alt: 'ドイツのビールはめっちゃデカいです' }],
   },
 };
 
@@ -218,6 +218,10 @@ const projectModalData = {
     screenshots: [
       // リリース後に画像パスを追加
       // 例: { src: 'assets/levelog_ss1.png', alt: 'ホーム画面' }
+      { src: 'assets/projects/levelog1.png', alt: 'ホーム画面' },
+      { src: 'assets/projects/levelog2.png', alt: 'ログ記録でステータスアップ' },
+      { src: 'assets/projects/levelog3.png', alt: 'レベルアップするとキャラクターが成長！' },
+      { src: 'assets/projects/levelog4.png', alt: '記録はカレンダーで確認できます' },
     ],
   },
 };
