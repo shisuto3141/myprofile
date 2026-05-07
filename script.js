@@ -205,7 +205,7 @@ const PROJECT_SCREENSHOT_SLOTS = 4;
 const projectModalData = {
   levelog: {
     name:       'LeveLog',
-    icon:       'assets/levelog_icon.png',
+    icon:       'assets/projects/levelog_icon.png',
     status:     '🚀 Coming Soon',
     desc:       '日々の学習・成長を記録してレベルアップを実感できるスマホアプリ。勉強時間・読書・筋トレなど、あらゆる「成長」を記録してゲーム感覚で続けられる仕組みを作っています。',
     features: [
@@ -218,10 +218,10 @@ const projectModalData = {
     screenshots: [
       // リリース後に画像パスを追加
       // 例: { src: 'assets/levelog_ss1.png', alt: 'ホーム画面' }
-      { src: 'assets/projects/levelog1.png', alt: 'ホーム画面' },
-      { src: 'assets/projects/levelog2.png', alt: 'ログ記録でステータスアップ' },
-      { src: 'assets/projects/levelog3.png', alt: 'レベルアップするとキャラクターが成長！' },
-      { src: 'assets/projects/levelog4.png', alt: '記録はカレンダーで確認できます' },
+      { src: 'assets/projects/levelog1.jpg', alt: 'ホーム画面' },
+      { src: 'assets/projects/levelog2.jpg', alt: 'ログ記録でステータスアップ' },
+      { src: 'assets/projects/levelog3.jpg', alt: 'レベルアップするとキャラクターが成長！' },
+      { src: 'assets/projects/levelog4.jpg', alt: '記録はカレンダーで確認できます' },
     ],
   },
 };
