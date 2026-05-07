@@ -157,8 +157,9 @@ overlay.addEventListener('click', (e) => {
 // 閉じる：ESC キー
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    if (lightbox.classList.contains('is-open')) closeLightbox();
-    else closeModal();
+    if (lightbox.classList.contains('is-open'))             closeLightbox();
+    else if (projectOverlay.classList.contains('is-open'))  closeProjectModal();
+    else                                                    closeModal();
   }
 });
 
@@ -194,6 +195,99 @@ lightbox.addEventListener('click', (e) => {
 
 // 写真クリックでライトボックスを開く（モーダル内の img に対して委譲）
 photosEl.addEventListener('click', (e) => {
+  const img = e.target.closest('img');
+  if (img) openLightbox(img.src, img.alt);
+});
+
+// ===== PROJECT MODAL =====
+const PROJECT_SCREENSHOT_SLOTS = 4;
+
+const projectModalData = {
+  levelog: {
+    name:       'LeveLog',
+    icon:       'assets/levelog_icon.png',
+    status:     '🚀 Coming Soon',
+    desc:       '日々の学習・成長を記録してレベルアップを実感できるスマホアプリ。勉強時間・読書・筋トレなど、あらゆる「成長」を記録してゲーム感覚で続けられる仕組みを作っています。',
+    features: [
+      '学習・習慣の記録とレベルアップ演出',
+      'AI による学習アドバイス機能',
+      '成長グラフ・統計ダッシュボード',
+      'カテゴリ別スキルツリー',
+    ],
+    tags:    ['Flutter', 'Dart', 'Firebase', 'AI'],
+    screenshots: [
+      // リリース後に画像パスを追加
+      // 例: { src: 'assets/levelog_ss1.png', alt: 'ホーム画面' }
+    ],
+  },
+};
+
+const projectOverlay   = document.getElementById('projectModalOverlay');
+const pModalIcon       = projectOverlay.querySelector('.pmodal-icon');
+const pModalName       = projectOverlay.querySelector('.pmodal-name');
+const pModalStatus     = projectOverlay.querySelector('.pmodal-status');
+const pModalDesc       = projectOverlay.querySelector('.pmodal-desc');
+const pModalFeatures   = projectOverlay.querySelector('.pmodal-features');
+const pModalTags       = projectOverlay.querySelector('.pmodal-tags');
+const pModalScreenshots = projectOverlay.querySelector('.pmodal-screenshots');
+const projectCloseBtn  = document.getElementById('projectModalClose');
+
+function openProjectModal(key) {
+  const d = projectModalData[key];
+  if (!d) return;
+
+  pModalIcon.src       = d.icon;
+  pModalIcon.alt       = d.name;
+  pModalName.textContent   = d.name;
+  pModalStatus.textContent = d.status;
+  pModalDesc.textContent   = d.desc;
+
+  // 機能リスト
+  pModalFeatures.innerHTML = d.features
+    .map(f => `<li>${f}</li>`)
+    .join('');
+
+  // タグ
+  pModalTags.innerHTML = d.tags
+    .map(t => `<span>${t}</span>`)
+    .join('');
+
+  // スクリーンショット
+  pModalScreenshots.innerHTML = '';
+  for (let i = 0; i < PROJECT_SCREENSHOT_SLOTS; i++) {
+    const slot = document.createElement('div');
+    slot.className = 'pmodal-screenshot-slot';
+    if (d.screenshots[i]) {
+      const img = document.createElement('img');
+      img.src = d.screenshots[i].src;
+      img.alt = d.screenshots[i].alt || '';
+      slot.appendChild(img);
+    } else {
+      slot.innerHTML = '<i class="bi bi-phone"></i><span>準備中</span>';
+    }
+    pModalScreenshots.appendChild(slot);
+  }
+
+  projectOverlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+  projectOverlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.project-card--clickable').forEach((card) => {
+  card.addEventListener('click', () => openProjectModal(card.dataset.project));
+});
+
+projectCloseBtn.addEventListener('click', closeProjectModal);
+projectOverlay.addEventListener('click', (e) => {
+  if (e.target === projectOverlay) closeProjectModal();
+});
+
+// スクリーンショットのライトボックス（project modal 内）
+pModalScreenshots.addEventListener('click', (e) => {
   const img = e.target.closest('img');
   if (img) openLightbox(img.src, img.alt);
 });

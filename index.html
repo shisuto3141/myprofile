@@ -130,7 +130,7 @@
       <h2 class="section-title">Projects</h2>
       <div class="project-grid">
 
-        <div class="project-card">
+        <div class="project-card project-card--clickable" data-project="levelog">
           <div class="project-card-header">
             <img class="project-icon" src="assets/levelog_icon.png" alt="LeveLog icon" />
             <div>
@@ -147,6 +147,7 @@
             <span>Dart</span>
             <span>AI</span>
           </div>
+          <p class="project-card-hint"><i class="bi bi-hand-index"></i> タップして詳細を見る</p>
         </div>
 
       </div>
@@ -248,6 +249,42 @@
       <div class="modal-body">
         <p class="modal-comment"></p>
         <div class="modal-photos"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== PROJECT MODAL ========== -->
+  <div class="modal-overlay" id="projectModalOverlay">
+    <div class="modal modal--project" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <img class="pmodal-icon" src="" alt="" />
+          <div>
+            <h2 class="modal-title pmodal-name"></h2>
+            <span class="pmodal-status"></span>
+          </div>
+        </div>
+        <button class="modal-close" id="projectModalClose" aria-label="閉じる">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-comment pmodal-desc"></p>
+
+        <div class="pmodal-section">
+          <h4 class="pmodal-section-title"><i class="bi bi-stars"></i> 主な機能</h4>
+          <ul class="pmodal-features"></ul>
+        </div>
+
+        <div class="pmodal-section">
+          <h4 class="pmodal-section-title"><i class="bi bi-code-slash"></i> 技術スタック</h4>
+          <div class="pmodal-tags"></div>
+        </div>
+
+        <div class="pmodal-section">
+          <h4 class="pmodal-section-title"><i class="bi bi-images"></i> スクリーンショット</h4>
+          <div class="pmodal-screenshots"></div>
+        </div>
       </div>
     </div>
   </div>
